@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tooltipster</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles/default.css">
+    <link rel="stylesheet" href="css/tooltipster.bundle.min.css">
+    <link rel="stylesheet" href="css/tooltipster-sideTip-borderless.min.css">
+    <link rel="stylesheet" href="css/tooltipster-sideTip-light.min.css">
+    <link rel="stylesheet" href="css/tooltipster-sideTip-noir.min.css">
+    <link rel="stylesheet" href="css/tooltipster-sideTip-punk.min.css">
+    <link rel="stylesheet" href="css/tooltipster-sideTip-shadow.min.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                        Tooltipster
+                    </a>
+                </li>
+                <li class="selected">
+                    <a href="example1.html">Exemplo simples</a>
+                </li>
+                <li>
+                    <a href="example2.html">Tooltip HTML</a>
+                </li>
+                <li>
+                    <a href="../index.html">Voltar</a>
+                </li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Exemplo simples</h1>
+                        <p>Para usar o Tooltipster, precisas de adicionar 3 ficheiros:
+                        <ul>
+                        <li>JQuery</li>
+                        <li>Javascript do Tooltipster</li>
+                        <li>CSS do Tooltipster</li>
+                        </ul>
+                        </p>
+                        <p>No caso do Weebox, o JQuery já vem carregado, e apenas precisas de adicionar os ficheiros do Tooltipster.</p>
+                        <p>Numa página "limpa" (o Weebox é um caso especial), terias algo como: 
+                        <pre><code class="html">&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/tooltipster.bundle.min.css&quot; /&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.10.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/tooltipster.bundle.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+</p>
+<p>Depois, par ativar o plugin, tens de fazer 2 coisas:<br/></p>
+<p>
+<ul>
+<li>Adicionar uma classe de "âncora" (um ponto de acesso) nos sítios onde quiseres adicionar a tooltip especial</li>
+<li>Chamar a função tooltipster() nos elementos que correspondem àquela classe</li>
+</ul>
+</p>
+<p>Por exemplo:<br/></p>
+<p>
+HTML:<br/>
+<pre><code class="html">
+&lt;img class=&quot;tooltip&quot; src=&quot;img/sguimaraes.jpg&quot; title=&quot;Sara Guimarães&quot; alt=&quot;Sara Guimarães&quot; /&gt;
+</code></pre>
+</p>
+<p>
+JAVASCRIPT:
+<pre><code class="javascript">
+&lt;script&gt;
+  $(document).ready(function() {
+    $(&quot;.tooltip&quot;).tooltipster();
+});
+&lt;/script&gt;
+</code>
+</pre>
+</p>
+<p>
+RESULTADO:<br/>
+</p>
+<p style="height:200px;">
+<img class="tooltip" src="img/sguimaraes.jpg" title="Sara Guimarães" alt="Sara Guimarães" />
+</p>
+<p>O Tooltipster disponibiliza alguns "temas" que permitem mudar o aspeto das tooltips:
+<ul>
+<li>Default</li>
+<li>Light</li>
+<li>Borderless</li>
+<li>Punk</li>
+<li>Noir</li>
+<li>Shadow</li>
+</ul>
+Para se utilizar um tema, basta adicionar o CSS deste tema e ao executar o comando tooltipster(), dizer-lhe que tema utilizar:<br/>
+<pre><code class="javascript">&lt;script&gt;
+  $(document).ready(function() {
+    $(&quot;.tooltip&quot;).tooltipster(
+        {
+            theme: &quot;tooltipster-noir&quot;;
+        }
+    );
+  });
+&lt;/script&gt;
+</code></pre>
+Isso permite-te ter total controlo do aspeto das tooltips... Se por exemplo tiveres várias fotos e quiseres aplicar estilos diferentes (e funcionalidades... mas falo disso mais à frente...), podes fazê-lo facilmente:<br/>
+HTML:<br/>
+<pre><code class="html">
+&lt;img class=&quot;tooltipNormal&quot; src=&quot;img/sguimaraes.jpg&quot; title=&quot;Sara Guimarães&quot; alt=&quot;Sara Guimarães&quot; /&gt;
+&lt;img class=&quot;tooltipLight&quot; src=&quot;img/sguimaraes.jpg&quot; title=&quot;Sara Guimarães&quot; alt=&quot;Sara Guimarães&quot; /&gt;
+&lt;img class=&quot;tooltipPunk&quot; src=&quot;img/sguimaraes.jpg&quot; title=&quot;Sara Guimarães&quot; alt=&quot;Sara Guimarães&quot; /&gt;
+&lt;img class=&quot;tooltipNoir&quot; src=&quot;img/sguimaraes.jpg&quot; title=&quot;Sara Guimarães&quot; alt=&quot;Sara Guimarães&quot; /&gt;
+&lt;img class=&quot;tooltipBorderless&quot; src=&quot;img/sguimaraes.jpg&quot; title=&quot;Sara Guimarães&quot; alt=&quot;Sara Guimarães&quot; /&gt;
+</code></pre>
+</p>
+<p>
+JAVASCRIPT:
+<pre><code class="javascript">
+&lt;script&gt;
+  $(document).ready(function() {
+    $(&quot;.tooltipNormal&quot;).tooltipster();
+    $(&quot;.tooltipLight&quot;).tooltipster(
+        {
+            theme:&quot;tooltipster-light&quot;
+        }
+    );
+    $(&quot;.tooltipPunk&quot;).tooltipster(
+        {
+            theme:&quot;tooltipster-punk&quot;
+        }
+    );
+    $(&quot;.tooltipNoir&quot;).tooltipster(
+        {
+            theme:&quot;tooltipster-noir&quot;
+        }
+    );
+    $(&quot;.tooltipBorderless&quot;).tooltipster(
+        {
+            theme:&quot;tooltipster-borderless&quot;
+        }
+    );
+});
+&lt;/script&gt;
+</code>
+</pre>
+</p>
+<p>
+RESULTADO:<br/>
+</p>
+<p style="height:200px;">
+<img class="tooltipNormal" src="img/sguimaraes.jpg" title="Sara Guimarães" alt="Sara Guimarães" />
+<img class="tooltipLight" src="img/sguimaraes.jpg" title="Sara Guimarães" alt="Sara Guimarães" />
+<img class="tooltipPunk" src="img/sguimaraes.jpg" title="Sara Guimarães" alt="Sara Guimarães" />
+<img class="tooltipNoir" src="img/sguimaraes.jpg" title="Sara Guimarães" alt="Sara Guimarães" />
+<img class="tooltipBorderless" src="img/sguimaraes.jpg" title="Sara Guimarães" alt="Sara Guimarães" />
+</p>
+<p>NOTA: Quando passei o theme à função tooltipster(), usei algo estranho com chavetas { ... }. Isto é um objeto JSON... Basicamente, permite-te definir um conjunto de chave -> valor. Nos casos acima, a chave é "theme", e o valor é o nome do tema que queres utilizar... Mas podes passar mais parâmetros a esta função.<br/>
+<pre><code class="javascript">{
+    chave1:&quot;valor associado à chave 1&quot;,
+    chave2:&quot;valor associado à chave 2&quot;,
+    chave3:&quot;valor associado à chave 3&quot;
+}
+</code></pre>
+Estes vários parâmetros que consegue passar permite controlar ainda mais as tooltips. Todos os exemplos a seguir utilizam várias combinações destes parâmetros.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/tooltipster.bundle.min.js"></script>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    $(document).ready(function() {
+        $('.tooltip').tooltipster();
+        $('.tooltipNormal').tooltipster();
+        $('.tooltipLight').tooltipster(
+        {
+            theme: 'tooltipster-light'
+        }
+        );
+        $('.tooltipPunk').tooltipster(
+        {
+            theme: 'tooltipster-punk'
+        }
+        );
+        $('.tooltipNoir').tooltipster(
+        {
+            theme: 'tooltipster-noir'
+        }
+        );
+         $('.tooltipBorderless').tooltipster(
+        {
+            theme: 'tooltipster-borderless'
+        }
+        );
+    });
+    </script>
+     <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tooltipster</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles/default.css">
+    <link rel="stylesheet" href="css/tooltipster.bundle.min.css">
+    <link rel="stylesheet" href="css/tooltipster-sideTip-borderless.min.css">
+    <link rel="stylesheet" href="css/tooltipster-sideTip-light.min.css">
+    <link rel="stylesheet" href="css/tooltipster-sideTip-noir.min.css">
+    <link rel="stylesheet" href="css/tooltipster-sideTip-punk.min.css">
+    <link rel="stylesheet" href="css/tooltipster-sideTip-shadow.min.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                        Tooltipster
+                    </a>
+                </li>
+                <li>
+                    <a href="example1.html">Exemplo simples</a>
+                </li>
+                <li class="selected">
+                    <a href="example2.html">Tooltip HTML</a>
+                </li>
+                <li>
+                    <a href="../index.html">Voltar</a>
+                </li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Exemplo com tooltip HTML</h1>
+                        <p>No exemplo simples anterior, a tooltip apresentava apenas texto (o conteúdo do atributo "title"). Porém, é possível a tooltip apresentar HTML, com imagens, etc...</p>
+                        <p>Para isso:<br/>
+                        <ol>
+                        	<li>Crias uma div escondida (display:none)</li>
+                        	<li>Dentro desta div, crias uma (ou mais) div, com o conteúdo que queres que apareça na(s) tooltip(s), atribuindo-lhe ids distintos</li>
+							<li>No sítio onde queres que a tooltip apareça, para além de definires a class (que é utilizada como ponto de acesso, se bem te lembras, para a função tooltipster), adicionas um atributo extra, chamado "data-tooltip-content", e dás lhe como valor "#{idQueDesteÀDivDoConteúdo".</li>
+                        </ol>
+                        </p>
+                        <p>Exemplo<br/>
+                        HTML:<br/>
+<pre><code class="html">
+&lt;div class=&quot;tooltip clickable&quot; data-tooltip-content=&quot;#conteudoDaTooltip&quot; title=&quot;Sara Umbelina Macedo Guimarães&quot; alt=&quot;Sara Umbelina Macedo Guimarães&quot; &gt;Sara Guimarães&lt;/div&gt;
+
+&lt;div class=&quot;esconder&quot; &gt;
+	&lt;div id=&quot;conteudoDaTooltip&quot; class=&quot;esconder&quot; &gt;
+		&lt;img src=&quot;img/sguimaraes.jpg&quot; /&gt; &lt;span class=&quot;sguimaraes&quot; &gt;Sara Umbelina Macedo Guimarães&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</p>
+<p>
+JAVASCRIPT:
+<pre><code class="javascript">
+&lt;script&gt;
+  $(document).ready(function() {
+    $(&quot;.tooltip&quot;).tooltipster(
+		{
+			theme: &quot;tooltipster-light&quot;
+		}
+    );
+});
+&lt;/script&gt;
+</code>
+</pre>
+</p>
+<p>
+RESULTADO:<br/>
+</p>
+<p>
+<div class="tooltip clickable" data-tooltip-content="#conteudoDaTooltip" title="Sara Umbelina Macedo Guimarães" alt="Sara Umbelina Macedo Guimarães" >Sara Guimarães</div><br/>
+<div class="esconder">
+	<div id="conteudoDaTooltip">
+		<img src="img/sguimaraes.jpg" > <span class="sguimaraes">Sara Umbelina Macedo Guimarães</span>
+    </div>
+ </div></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/tooltipster.bundle.min.js"></script>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    $(document).ready(function() {
+        $('.tooltip').tooltipster(
+        	{
+			theme: "tooltipster-light"
+			}
+		);
+    });
+    </script>
+     <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
