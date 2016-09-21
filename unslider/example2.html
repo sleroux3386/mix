@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Unslider</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="css/unslider.css" rel="stylesheet">
+    <link href="css/unslider-dots.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                        Unslider
+                    </a>
+                </li>
+                <li>
+                    <a href="example1.html">Exemplo simples</a>
+                </li>
+                <li class="selected">
+                    <a href="example2.html">Exemplos "avançados"</a>
+                </li>
+                <li>
+                    <a href="../index.html">Voltar</a>
+                </li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Exemplos "avançados"</h1>
+                        <p>Tal como no plugin <a href="../tooltipster/index.html">Tooltipster</a>, é possível configurar este plugin através de um objeto JSON, que passas como parâmetro ao executar a função <code><pre>unslider()</pre></code>.</p>
+                        <p>Nos exemplos iniciais, será utilizado o mesmo HTML do <a href="example1.html">Exemplo simples</a>. Nos exemplos finais, serão utilizadas imagens.</p>                        
+                        <h3>Slide automático</h3>
+                        <p>O slide automático não precisa de ter os botões para ver o slide seguinte. A transição é automática e podes configurar a velocidade da animação e o tempo que cada slide fica visível.</p>
+                        <p><pre><code class="javascript">&lt;script&gt;
+$(document).ready(function() {
+    $(&quot;.slide1&quot;).unslider({
+        autoplay: true
+    });
+});
+&lt;/script&gt;</code></pre>
+</p>
+<p>
+RESULTADO:<br/>
+</p>
+<p>
+<div class="sara saraPretty slide1">
+    <ul>
+        <li>Sara</li>
+        <li>Umbelina</li>
+        <li>Macedo</li>
+        <li>Guimarães</li>
+    </ul>
+</div>
+</p>
+<h3>Slide automático infinito</h3>
+<p>No exemplo anterior, quando chega ao último elemento da lista, o "carrossel" volta para trás para recomeçar. Podes alterar este comportamento, adicionando o parâmetro "infinite" com valor "true":
+                        <p><pre><code class="javascript">&lt;script&gt;
+$(document).ready(function() {
+    $(&quot;.slide2&quot;).unslider({
+        autoplay: true,
+        infinite: true
+    });
+});
+&lt;/script&gt;</code></pre>
+</p>
+<p>
+RESULTADO:<br/>
+</p>
+<p>
+<div class="sara saraPretty slide2">
+    <ul>
+        <li>Sara</li>
+        <li>Umbelina</li>
+        <li>Macedo</li>
+        <li>Guimarães</li>
+    </ul>
+</div>
+</p>
+<h3>Slide automático com controlo de velocidade da animação</h3>
+<p>Nos exemplos anteriores, a animação é muito rápida (por omissão, demora 750ms a mudar de slide. Podes alterar este valor, através do parâmetro "speed":</p>
+                        <p><pre><code class="javascript">&lt;script&gt;
+$(document).ready(function() {
+    $(&quot;.slide3&quot;).unslider({
+        autoplay: true,
+        infinite: true,
+        speed: 2000
+    });
+    $(&quot;.slide4&quot;).unslider({
+        autoplay: true,
+        infinite: true,
+        speed: 100
+    });
+});
+&lt;/script&gt;</code></pre>
+</p>
+<p>
+RESULTADOS:<br/>
+</p>
+<p>
+<div class="sara saraPretty slide3">
+    <ul>
+        <li>Sara</li>
+        <li>Umbelina</li>
+        <li>Macedo</li>
+        <li>Guimarães</li>
+    </ul>
+</div>
+</p>
+<p>
+<div class="sara saraPretty slide4">
+    <ul>
+        <li>Sara</li>
+        <li>Umbelina</li>
+        <li>Macedo</li>
+        <li>Guimarães</li>
+    </ul>
+</div>
+</p>
+<p>O parâmetro speed APENAS controla o tempo que demora a animação de um slide para o outro... Para controlar o tempo em que o slide fica ativo, é necessário alterar um outro parâmetro...</p>
+<h3>Slide automático com controlo de velocidade da animação e atraso</h3>
+<p>Para controlar o tempo que um slide fica visível, tens de definir o parãmetro "delay". Por omissao, este tem um valor de 3000ms.</p>
+                        <p><pre><code class="javascript">&lt;script&gt;
+$(document).ready(function() {
+    $(&quot;.slide5&quot;).unslider({
+        autoplay: true,
+        infinite: true,
+        speed: 2000,
+        delay: 500
+    });
+    $(&quot;.slide6&quot;).unslider({
+        autoplay: true,
+        infinite: true,
+        speed: 2000,
+        delay: 5000
+    });
+});
+&lt;script&gt;</code></pre>
+</p>
+<p>
+RESULTADO:<br/>
+</p>
+<p>
+<div class="sara saraPretty slide5">
+    <ul>
+        <li>Sara</li>
+        <li>Umbelina</li>
+        <li>Macedo</li>
+        <li>Guimarães</li>
+    </ul>
+</div>
+<div class="sara saraPretty slide6">
+    <ul>
+        <li>Sara</li>
+        <li>Umbelina</li>
+        <li>Macedo</li>
+        <li>Guimarães</li>
+    </ul>
+</div>
+</p>
+<p>NOTA IMPORTANTE: Cuidado com os valores que coloques no delay e no speed!!!!!! Em testes que fiz, se o tempo que o slide fica visível é menor que o tempo da animação, o plugin passa-se todo...</p>
+<p><pre><code class="javascript">&lt;script&gt;
+$(document).ready(function() {
+    $(&quot;.slide7&quot;).unslider({
+        autoplay: true,
+        infinite: true,
+        speed: 2000,
+        delay: 1000
+    });
+});
+&lt;script&gt;</code></pre></p>
+<p>
+<div class="sara saraPretty slide7">
+    <ul>
+        <li>Sara</li>
+        <li>Umbelina</li>
+        <li>Macedo</li>
+        <li>Guimarães</li>
+    </ul>
+</div>
+</p>
+<h3>Slide automático com animação vertical</h3>
+                        <p>Nos exemplos anteriores, o slide é horizontal. Podes alterar este comportamento, através do parâmetros "animation". Por omissão, este tem o valor "horizontal". Mas podes alterar para "vertical" se quiseres...</p>
+                        <p><pre><code class="javascript">&lt;script&gt;
+$(document).ready(function() {
+    $(&quot;.slide8&quot;).unslider({
+        autoplay: true,
+        infinite: true,
+        animation: "vertical"
+    });
+});
+&lt;/script&gt;</code></pre>
+</p>
+<p>
+RESULTADO:<br/>
+</p>
+<p>
+<div class="sara saraPretty slide8">
+    <ul>
+        <li>Sara</li>
+        <li>Umbelina</li>
+        <li>Macedo</li>
+        <li>Guimarães</li>
+    </ul>
+</div>
+</p>
+<h3>Slides com imagens e com muitas coisas extras</h3>
+                        <p>Nos exemplos anteriores, apenas usei texto na lista. Mas como disse, podes colocar lá imagens...</p>
+                        <p>Nos exemplos a seguir, são apresentadas algumas funcionalidades extras do plugin Unslider (desde controlo do slide por teclas, definição dos botões de navegação, etc...). Apenas vou dar algunas exemplos, e para mais documentação, podes consultar o site do plugin.</p>
+                        <p>Nota: a escolha das imagens usadas nos exemplos a seguir foi totalmente aleatória.</p>
+<p><pre><code class="html">&lt;div class=&quot;slide10&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;img src=&quot;img/cd1.png&quot; with=200 height=200 /&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;img/cd2.jpg&quot; with=200 height=200 /&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;img/cd3.jpg&quot; with=200 height=200 /&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;img/cd4.jpg&quot; with=200 height=200 /&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;img/cd5.jpg&quot; with=200 height=200 /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre></p>
+<p><pre><code class="javascript">&lt;script&gt;
+$(document).ready(function() {
+    $(&quot;.slide10&quot;).unslider({
+        autoplay: false,
+        infinite: true,
+        arrows: {
+            prev: '&lt;a class=&quot;unslider-arrow prev&quot;&lt;Slide anterior&lt;/a&lt;',
+            next: '&lt;a class=&quot;unslider-arrow next&quot;&lt;Slide seguinte&lt;/a&lt;'
+        }
+        speed: 1000    
+    });
+});
+&lt;/script&gt;</code></pre></p>
+<p>
+RESULTADO:<br/>
+</p>
+<p>
+<div class="slide10">
+    <ul>
+        <li><img src="img/cd1.png" with=200 height=200 /></li>
+        <li><img src="img/cd2.jpg" with=200 height=200 /></li>
+        <li><img src="img/cd3.jpg" with=200 height=200 /></li>
+        <li><img src="img/cd4.jpg" with=200 height=200 /></li>
+        <li><img src="img/cd5.jpg" with=200 height=200 /></li>
+    </ul>
+</div>
+</p>
+<p><pre><code class="javascript">&lt;script&gt;
+$(document).ready(function() {
+    $(&quot;.slide11&quot;).unslider({
+        autoplay: true,
+        infinite: true,
+        animation: 'fade',
+        keys:false   
+    });
+});
+&lt;/script&gt;</code></pre></p>
+<p>
+RESULTADO:<br/>
+</p>
+<p>
+<div style="height:200px;" class="slide11">
+    <ul>
+        <li><img src="img/cd1.png" with=200 height=200 /></li>
+        <li><img src="img/cd2.jpg" with=200 height=200 /></li>
+        <li><img src="img/cd3.jpg" with=200 height=200 /></li>
+        <li><img src="img/cd4.jpg" with=200 height=200 /></li>
+        <li><img src="img/cd5.jpg" with=200 height=200 /></li>
+    </ul>
+</div>
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../js/jquery-2.2.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/unslider-min.js"></script>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    $(document).ready(function() {
+        $('.slide1').unslider({
+            autoplay: true
+        });
+        $('.slide2').unslider({
+            autoplay: true,
+            infinite: true
+        });
+        $('.slide3').unslider({
+            autoplay: true,
+            infinite: true,
+            speed: 2000
+        });
+        $('.slide4').unslider({
+            autoplay: true,
+            infinite: true,
+            speed:100
+        });
+        $('.slide5').unslider({
+            autoplay: true,
+            infinite: true,
+            speed:1000,
+            delay:2000
+        });
+        $('.slide6').unslider({
+            autoplay: true,
+            infinite: true,
+            speed:2000,
+            delay:5000
+        });
+        $('.slide7').unslider({
+            autoplay: true,
+            infinite: true,
+            speed:2000,
+            delay:1000
+        });
+        $('.slide8').unslider({
+            autoplay: true,
+            infinite: true,
+            animation: "vertical"
+        });
+        $('.slide9').unslider({
+            autoplay: false,
+            infinite:true,
+            keys: {
+                prev: 37,
+                next: 39
+            },
+            speed: 1000    
+        });
+         $('.slide10').unslider({
+            autoplay: false,
+            infinite: true,
+            arrows: {
+                prev: '<a class="unslider-arrow prev">Slide anterior</a>',
+                next: '<a class="unslider-arrow next">Slide seguinte</a>'
+            },
+            speed: 1000    
+        });
+         $('.slide11').unslider({
+            animation: 'fade',
+            autoplay: true,
+            arrows: false    
+        });
+    });
+    </script>
+     <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

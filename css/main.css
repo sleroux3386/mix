@@ -154,3 +154,55 @@ footer {
     cursor: pointer;
     cursor: hand;
 }
+
+.thumbnail img{
+    height:160px;
+}
+/* CSS usada no Unslider*/
+.saraPretty{
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: FUCHSIA;
+    color: WHITE;
+    font-weight: bold;
+}
+
+.keep{
+    height:370px;
+    width:90%;
+    margin:0 auto;
+}
+
+.keepWrapper .unslider-nav{
+    width:90%;
+    margin:0 auto;
+}
+
+.keepWrapper .unslider-nav ol li{
+    background: url("../unslider/img/bola.png");
+    width:15px;
+    height:15px;
+}
+.keepWrapper .unslider-nav ol .unslider-active{
+    background: url("../unslider/img/bolaActiva.png");
+    width:15px;
+    height:15px;
+}
+.keepWrapper .unslider-arrow {
+    display: block;
+    width: 86px;
+    height: 106px;
+    top: 340px;
+    border-radius: 32px;
+    text-indent: -999em;
+    z-index:100;
+}
+.keepWrapper:hover .unslider-arrow.prev {
+    background-image: url("../unslider/img/arr-prev.png");
+    left: 66px;
+}
+.keepWrapper:hover .unslider-arrow.next {
+    background-image: url("../unslider/img/arr-next.png");
+    right: 66px;
+}
