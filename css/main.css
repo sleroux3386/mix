@@ -169,15 +169,17 @@ footer {
 }
 
 .keep{
-    height:370px;
+    height:535px;
     width:90%;
     margin:0 auto;
 }
 
-.keepWrapper .unslider-nav{
-    width:90%;
-    margin:0 auto;
+.keep img{
+height:535px;
+width:100%;
 }
+
+
 
 .keepWrapper .unslider-nav ol li{
     background: url("../unslider/img/bola.png");
@@ -200,9 +202,9 @@ footer {
 }
 .keepWrapper:hover .unslider-arrow.prev {
     background-image: url("../unslider/img/arr-prev.png");
-    left: 66px;
+    left: 90px;
 }
 .keepWrapper:hover .unslider-arrow.next {
     background-image: url("../unslider/img/arr-next.png");
-    right: 66px;
+    right: 90px;
 }
